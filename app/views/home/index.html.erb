@@ -1,0 +1,20 @@
+<% if current_user %>
+  Logged in as <%= current_user.email %>.
+  <%= link_to "Log Out", logout_path %>
+<%= form_with do |form| %>
+  <div class="field">
+    <%= form.label :ticker %>
+    <%= form.text_field :ticker %>
+  </div>
+  <div class="field">
+    <%= form.label :shares %>
+    <%= form.number_field :shares %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+  <% end %>
+<% else %>
+  <%= link_to "Sign Up", signup_path %> or 
+  <%= link_to "Log In", login_path %>
+<% end %>
