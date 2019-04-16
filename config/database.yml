@@ -4,8 +4,8 @@ development:
   database: stock_development
   pool: 5
   host: localhost
-  username: postgres
-  password: test
+  username: ENV["STOCK_USER"]
+  password: ENV["STOCK_PASS"]
 
 test: &TEST
   adapter: postgresql
@@ -13,8 +13,8 @@ test: &TEST
   database: stock_test
   pool: 5
   host: localhost
-  username: postgres
-  password: test
+  username: ENV["STOCK_USER"]
+  password: ENV["STOCK_PASS"]
 
 production:
   adapter: postgresql
@@ -22,8 +22,8 @@ production:
   database: stock_production
   pool: 5
   host: localhost
-  username: postgres
-  password: test
+  username: ENV["STOCK_USER"]
+  password: ENV["STOCK_PASS"]
 
 cucumber:
   <<: *TEST
